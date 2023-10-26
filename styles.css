@@ -1,2 +1,139 @@
+:root {
+    --title: 'Big Shoulders Display', sans-serif;
+    --paragraphs: 'Lexend Deca', sans-serif;
+    --orange: hsl(31, 77%, 52%);
+    --cyan: hsl(184, 100%, 22%);
+    --dark-cyan: hsl(179, 100%, 13%);
+    --white: hsla(0, 0%, 100%, 0.75); /* paragraphs */
+    --light-gray: hsl(0, 0%, 95%); /* background, headings, buttons */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--paragraphs);
+    font-size: 0.95rem;
+    background-color: var(--light-gray);
+}
+
+.orange {
+    background-color: var(--orange);
+}
+
+.cyan {
+    background-color: var(--cyan);
+}
+
+.dark-cyan {
+    background-color: var(--dark-cyan);
+}
+
+.main {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    min-height: 95vh;
+    width: 900px;
+    margin: 0 auto;    
+    padding: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(1, auto);     
+}
+
+.col {
+    padding: 2rem;
+}
+
+.col:nth-child(1) {
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.col:nth-child(3) {
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.title {
+    color: var(--light-gray);
+    font-family: var(--title);
+    padding: 1rem 0;
+}
+
+.description {
+    line-height: 1.6;
+    color: var(--white);
+    padding-bottom: 3rem;
+}
+
+.button {
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+    font-family: var(--paragraphs); 
+    border: 2px solid transparent;
+    transition: all 0.3s;  
+    cursor: pointer; 
+}
+
+.btn-orange {
+    color: var(--orange);
+}
+
+.btn-orange:hover,
+.btn-orange:active {
+    background-color: var(--orange);
+    color: var(--light-gray);
+    border: 2px solid var(--light-gray);
+}
+
+.btn-cyan {
+    color: var(--cyan);
+}
+
+.btn-cyan:hover,
+.btn-cyan:active {
+    background-color: var(--cyan);
+    color: var(--light-gray);
+    border: 2px solid var(--light-gray);
+}
+
+.btn-dark-cyan {
+    color: var(--dark-cyan);
+}
+
+.btn-dark-cyan:hover,
+.btn-dark-cyan:active {
+    background-color: var(--dark-cyan);
+    color: var(--light-gray);
+    border: 2px solid var(--light-gray);
+}
+
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+/* Mobile Screen */
+@media screen and (max-width: 600px) {
+    .main {       
+        width: 100%;        
+    }
+
+    .grid {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .col:nth-child(1) {
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+    
+    .col:nth-child(3) {
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+}
