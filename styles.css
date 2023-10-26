@@ -50,6 +50,7 @@ body {
 
 .col {
     padding: 2rem;
+    padding-bottom: 4rem;
 }
 
 .col:nth-child(1) {
@@ -72,8 +73,8 @@ body {
     padding-bottom: 3rem;
 }
 
-.button {
-    border: none;
+.button {    
+    background-color:  var(--light-gray);    
     padding: 1rem 2rem;
     border-radius: 5rem;
     font-family: var(--paragraphs); 
